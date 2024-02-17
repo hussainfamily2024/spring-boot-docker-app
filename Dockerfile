@@ -1,7 +1,4 @@
 FROM openjdk:11
-
-COPY target/spring-boot-docker-app.jar  .
-
-EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "spring-boot-docker-app.jar"]
+ENV TZ="Asia/Kolkata"
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
